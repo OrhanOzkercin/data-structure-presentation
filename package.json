@@ -11,7 +11,7 @@
     "test": "gulp test",
     "start": "gulp serve",
     "build": "gulp build",
-    "production": "NODE_ENV=production gulp build && NODE_ENV=production npx @11ty/eleventy --config=eleventy.config.js"
+    "production": "NODE_ENV=production gulp build"
   },
   "author": {
     "name": "Hakim El Hattab",
