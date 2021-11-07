@@ -164,9 +164,12 @@
     </div>
 
     <script src="../dist/reveal.js"></script>
-    <script>
+
+    <script type="module">
+      import Reveal from 'dist/reveal.esm.js';
+      import Markdown from 'plugin/markdown/markdown.esm.js';
       Reveal.initialize({
-        plugins: [RevealHighlight],
+        plugins: [Markdown, RevealHighlight],
       });
     </script>
   </body>
