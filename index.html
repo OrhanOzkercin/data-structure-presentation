@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>reveal.js - Barebones</title>
+    <title>Junior Konf - Orhan Özkerçin</title>
     <link rel="stylesheet" href="../dist/reveal.css" />
     <link rel="stylesheet" href="../dist/theme/black.css" id="theme" />
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
@@ -12,6 +12,7 @@
     <style>
       p {
         font-size: 1.2rem;
+        letter-spacing: 0.12rem;
         font-weight: 400;
         text-align: start;
       }
@@ -80,7 +81,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-         <section>
+        <section>
           <div class="header">
             <h6 class="primary-color">React'ten Önce JavaScript!</h6>
             <h4 class="primary-color">Higher Order Array Methods</h4>
@@ -154,31 +155,31 @@
               high-level, list-like objects.
             </p>
             <pre><code data-line-numbers="3,10|4-6|7-9">
-              const myObject = 
+              const computer = 
               {
-                myKey1: 'ObjectValue1',
-                myKey2: 'ObjectValue2',
-                mykeyN: 'ObjectValueN',
-                objectMethod: function() {
-                  // Do something on this object
+                ramSize: '16gb',
+                hddSize: '1TB',
+                processor: 'Intel Core i7',
+                runComputer: function() {
+                  console.log('Computer is running...');
                 }
               };
               </code></pre>
           </section>
           <section data-transition="concave">
             <pre><code data-line-numbers="2-12|13">
-              const myObject = 
+              const computer = 
               {
-                myKey1: 'ObjectValue1',
-                myKey2: 'ObjectValue2',
-                mykeyN: 'ObjectValueN',
-                objectMethod: function() {
-                  // Do something on this object
+                ramSize: '16gb',
+                hddSize: '1TB',
+                processor: 'Intel Core i7',
+                runComputer: function() {
+                  console.log('Computer is running...');
                 }
               };
-              console.log(myObject.myKey1) // ObjectValue1
-              console.log(myObject.myKey2) // ObjectValue2
-              myObject.objectMethod() // Runs the method
+              console.log(myObject.ramSize) // 16gb
+              console.log(myObject.hddSize) // 1TB
+              myObject.runComputer() // Computer is running...
               
               </code></pre>
           </section>
@@ -220,13 +221,16 @@
           <section>
             <h4 class="primary-color">First Class Object nedir?</h4>
             <p>
-              <span style="color: darkgrey;">Wikipedia:</span> In computer science, a programming language is said to support first-class functions (or function literal)
-              if it treats functions as first-class objects. Specifically, this means that the language supports
-              constructing new functions during the execution of a program,  <span class="bg-primary px-1">storing them in data structures,passing
-              them as arguments to other functions, and returning them as the values of other functions.</span>
+              <span style="color: darkgrey">Wikipedia:</span> In computer science, a programming language is said to
+              support first-class functions (or function literal) if it treats functions as first-class objects.
+              Specifically, this means that the language supports constructing new functions during the execution of a
+              program,
+              <span class="bg-primary px-1"
+                >storing them in data structures,passing them as arguments to other functions, and returning them as the
+                values of other functions.</span
+              >
             </p>
-            
-            
+
             <pre>
               <code>
                 // Function definition and invocation
@@ -259,7 +263,10 @@
           </section>
           <section>
             <h4 class="primary-color">Higher-order functions</h4>
-            <p> <span style="color: darkgrey;">Eloquent Javascript:</span> Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions. </p>
+            <p>
+              <span style="color: darkgrey">Eloquent Javascript:</span> Functions that operate on other functions,
+              either by taking them as arguments or by returning them, are called higher-order functions.
+            </p>
             <pre><code>
               function myFunction(text, callbackFunc) {
                 console.log(text)
@@ -285,15 +292,25 @@
             <li>every()</li>
             <strong>...</strong>
           </ul>
-
         </section>
         <section>
-          <iframe src="https://codesandbox.io/embed/arr-foreach-u3ghs?fontsize=14&hidenavigation=1&theme=dark"
-            style="width:100%; height:600px; border:0; border-radius: 4px; overflow:hidden;"
+          <h4 class="primary-color">Array.prototype.forEach()</h4>
+          <iframe
+            src="https://codesandbox.io/embed/arr-foreach-u3ghs?fontsize=14&hidenavigation=1&theme=dark"
+            style="width: 100%; height: 600px; border: 0; border-radius: 4px; overflow: hidden"
             title="arr_ForEach"
             allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
           ></iframe>
+        </section>
+        <section>
+          <h4 class="primary-color">Array.prototype.map()</h4>
+          <iframe src="https://codesandbox.io/embed/arr-map-xtr01?fontsize=14&hidenavigation=1&theme=dark"
+          style="width:100%; height:600px; border:0; border-radius: 4px; overflow:hidden;"
+          title="arr_Map"
+          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+        ></iframe>
         </section>
       </div>
     </div>
@@ -306,6 +323,60 @@
       Reveal.initialize({
         plugins: [Markdown, RevealHighlight],
       });
+    </script>
+    <script>
+      const computer = {
+        ramSize: '16gb',
+        hddSize: '1TB',
+        processor: 'Intel Core i7',
+        runComputer: function () {
+          console.log('Computer is running...');
+        },
+      };
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const getName = function (name = 'Orhan') {
+        console.log(name);
+      };
+      const cat = 'Cheshire';
+      console.log('%cAvailable data structures', 'color: red');
+      console.log('\t%cArray: ', 'color: pink', 'numbers');
+      console.log('\t%cObject: ', 'color: pink', 'computer');
+      console.log('\t%cFunction: ', 'color: pink', 'getName');
+      console.log('\t%cString: ', 'color: pink', 'cat');
+      console.log('%c------------------------------------', 'color: red');
+
+      //Functions Example
+      function speak(string) {
+        console.log(string);
+      }
+
+      var talk = speak;
+
+      function functionReturner(fn) {
+        return fn;
+      }
+
+      var chat = functionReturner(talk);
+      var myFuncs = [talk];
+      talk.myProperty = 'bananas';
+
+
+      //Override console.clear
+      var log = console.clear;
+
+      const message = 'Hi!';
+
+      console.clear = function (e) {
+        log.apply();
+        console.log('%cAvailable data structures', 'color: red');
+        console.log('\t%cArray: ', 'color: pink', 'numbers');
+        console.log('\t%cObject: ', 'color: pink', 'computer');
+        console.log('\t%cFunction: ', 'color: pink', 'getName');
+        console.log('\t%cString: ', 'color: pink', 'cat');
+        console.log('%c------------------------------------', 'color: red');
+      };
+
+      console.clear();
     </script>
   </body>
 </html>
