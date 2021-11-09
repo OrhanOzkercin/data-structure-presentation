@@ -15,6 +15,11 @@
         font-weight: 400;
         text-align: start;
       }
+      code {
+        font-size: 0.8rem;
+        font-weight: 400;
+        text-align: start;
+      }
       ::selection {
         background: #ff9292 !important; /* WebKit/Blink Browsers */
       }
@@ -75,7 +80,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
+         <section>
           <div class="header">
             <h6 class="primary-color">React'ten Önce JavaScript!</h6>
             <h4 class="primary-color">Higher Order Array Methods</h4>
@@ -185,13 +190,13 @@
               let cat = 'Cheshire';
               console.log(cat.length); // 8
               console.log(cat[0]); // "C"
-              console.log(cat[1]); // "h"
+              console.log(cat.toLowerCase()); // "cheshire"
               
               </code></pre>
           </section>
           <section>
-            <img src="/assets/string-obj.png" alt="str">
-            <img src="/assets/string-prim-obj.png" alt="str">
+            <img src="/assets/string-obj.png" alt="str" />
+            <img src="/assets/string-prim-obj.png" alt="str" />
           </section>
         </section>
 
@@ -209,8 +214,74 @@
           </section>
           <section>
             <h4 class="primary-color">JavaScript'te functions nedir?</h4>
-            <h2 class="fragment"> Objectdir!</h2>
+            <h2 class="fragment">Objectdir!</h2>
+            <h2 class="fragment">First Class Objectdir!</h2>
           </section>
+          <section>
+            <h4 class="primary-color">First Class Object nedir?</h4>
+            <p>
+              <span style="color: darkgrey;">Wikipedia:</span> In computer science, a programming language is said to support first-class functions (or function literal)
+              if it treats functions as first-class objects. Specifically, this means that the language supports
+              constructing new functions during the execution of a program,  <span class="bg-primary px-1">storing them in data structures,passing
+              them as arguments to other functions, and returning them as the values of other functions.</span>
+            </p>
+            
+            
+            <pre>
+              <code>
+                // Function definition and invocation
+                function speak(string) {
+                  console.log(string);
+                }
+                speak("Hello");                     // logs "Hello"
+
+                // Store in a variable
+                var talk = speak;
+                talk("Hi");                         // logs "Hi"
+
+                // Pass as an argument to a function
+                // Return from a function
+                function functionReturner(fn) {
+                  return fn;
+                }
+                var chat = functionReturner(talk);
+                chat("Good Morning");               // logs "Good Morning"
+
+                // Store in a data structure
+                var myFuncs = [talk];
+                myFuncs[0]("Good Afternoon");       // logs "Good Afternoon"
+
+                // Owns properties
+                talk.myProperty = "bananas";
+                console.log(talk.myProperty);       // logs "bananas"
+              </code>
+                        </pre>
+          </section>
+          <section>
+            <h4 class="primary-color">Higher-order functions</h4>
+            <p> <span style="color: darkgrey;">Eloquent Javascript:</span> Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions. </p>
+            <pre><code>
+              function myFunction(text, callbackFunc) {
+                console.log(text)
+                callbackFunc()
+              }
+              function myCallbackFunc() {
+                console.log('Callbackfunction')
+              }
+              myFunction('text', myCallbackFunc)
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <h4 class="primary-color">Higher-order Array Methods</h4>
+          <ul>
+            <li>forEach()</li>
+            <li>filter()</li>
+            <li>map()</li>
+            <li>sort()</li>
+            <li>reduce()</li>
+          </ul>
+
         </section>
       </div>
     </div>
