@@ -150,11 +150,7 @@
               The Object class represents one of JavaScript's data types. It is used to store various keyed collections
               and more complex entities.
             </p>
-            <p>
-              The JavaScript Array class is a global object that is used in the construction of arrays; which are
-              high-level, list-like objects.
-            </p>
-            <pre><code data-line-numbers="3,10|4-6|7-9">
+            <pre><code data-line-numbers="2,3,10|4-6|7-9">
               const computer = 
               {
                 ramSize: '16gb',
@@ -177,9 +173,9 @@
                   console.log('Computer is running...');
                 }
               };
-              console.log(myObject.ramSize) // 16gb
-              console.log(myObject.hddSize) // 1TB
-              myObject.runComputer() // Computer is running...
+              console.log(computer.ramSize) // 16gb
+              console.log(computer["hddSize"]) // 1TB
+              computer.runComputer() // Computer is running...
               
               </code></pre>
           </section>
@@ -221,43 +217,36 @@
           <section>
             <h4 class="primary-color">First Class Object nedir?</h4>
             <p>
-              <span style="color: darkgrey">Wikipedia:</span> In computer science, a programming language is said to
-              support first-class functions (or function literal) if it treats functions as first-class objects.
-              Specifically, this means that the language supports constructing new functions during the execution of a
-              program,
+              <span style="color: darkgrey">Wikipedia:</span> In programming language design, a first-class citizen
+              (also type, object, entity, or value) in a given programming language is an entity which supports all the
+              operations generally available to other entities.
               <span class="bg-primary px-1"
-                >storing them in data structures,passing them as arguments to other functions, and returning them as the
-                values of other functions.</span
+                >These operations typically include being passed as an argument, returned from a function, modified, and
+                assigned to a variable.</span
               >
             </p>
 
             <pre>
               <code>
-                // Function definition and invocation
                 function speak(string) {
                   console.log(string);
                 }
-                speak("Hello");                     // logs "Hello"
+                speak("Hello");                     
 
-                // Store in a variable
                 var talk = speak;
-                talk("Hi");                         // logs "Hi"
+                talk("Hi");                         
 
-                // Pass as an argument to a function
-                // Return from a function
                 function functionReturner(fn) {
                   return fn;
                 }
                 var chat = functionReturner(talk);
-                chat("Good Morning");               // logs "Good Morning"
+                chat("Good Morning");               
 
-                // Store in a data structure
                 var myFuncs = [talk];
-                myFuncs[0]("Good Afternoon");       // logs "Good Afternoon"
+                myFuncs[0]("Good Afternoon");       
 
-                // Owns properties
                 talk.myProperty = "bananas";
-                console.log(talk.myProperty);       // logs "bananas"
+                console.log(talk.myProperty);       
               </code>
                         </pre>
           </section>
@@ -294,6 +283,16 @@
           </ul>
         </section>
         <section>
+          <h4 class="primary-color">Examples</h4>
+          <iframe
+            src="https://codesandbox.io/embed/examples-f1wfy?fontsize=14&hidenavigation=1&theme=dark"
+            style="width: 100%; height: 600px; border: 0; border-radius: 4px; overflow: hidden"
+            title="Examples"
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+          ></iframe>
+        </section>
+        <section>
           <h4 class="primary-color">Array.prototype.forEach()</h4>
           <iframe
             src="https://codesandbox.io/embed/arr-foreach-u3ghs?fontsize=14&hidenavigation=1&theme=dark"
@@ -305,12 +304,13 @@
         </section>
         <section>
           <h4 class="primary-color">Array.prototype.map()</h4>
-          <iframe src="https://codesandbox.io/embed/arr-map-xtr01?fontsize=14&hidenavigation=1&theme=dark"
-          style="width:100%; height:600px; border:0; border-radius: 4px; overflow:hidden;"
-          title="arr_Map"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-        ></iframe>
+          <iframe
+            src="https://codesandbox.io/embed/arr-map-xtr01?fontsize=14&hidenavigation=1&theme=dark"
+            style="width: 100%; height: 600px; border: 0; border-radius: 4px; overflow: hidden"
+            title="arr_Map"
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+          ></iframe>
         </section>
       </div>
     </div>
@@ -360,6 +360,13 @@
       var myFuncs = [talk];
       talk.myProperty = 'bananas';
 
+      function myFunction(text, callbackFunc) {
+        console.log(text);
+        callbackFunc();
+      }
+      function myCallbackFunc() {
+        console.log('Callbackfunction');
+      }
 
       //Override console.clear
       var log = console.clear;
