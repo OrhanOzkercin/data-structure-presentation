@@ -67,7 +67,9 @@
       .my-name p {
         text-align: center !important;
       }
-
+      code {
+        font-size: 1.4rem;
+      }
       .icons {
         display: flex;
         align-items: center;
@@ -234,27 +236,34 @@
 
             <pre>
               <code>
-                function speak(string) {
-                  console.log(string);
-                }
-                speak("Hello");                     
+      function speak(string) {
+        console.log(string);
+      }
 
-                var talk = speak;
-                talk("Hi");                         
 
-                function functionReturner(fn) {
-                  return fn;
-                }
-                var chat = functionReturner(talk);
-                chat("Good Morning");               
+      speak("Hello");                     
 
-                var myFuncs = [talk];
-                myFuncs[0]("Good Afternoon");       
 
-                talk.myProperty = "bananas";
-                console.log(talk.myProperty);       
-              </code>
-                        </pre>
+      var talk = speak;
+      talk("Hi");                         
+
+
+      function functionReturner(fn) {
+        return fn;
+      }
+
+
+      var chat = functionReturner(talk);
+      chat("Good Morning");               
+
+
+      var myFuncs = [talk];
+      myFuncs[0]("Good Afternoon");       
+
+      
+      talk.myProperty = "bananas";
+      console.log(talk.myProperty);       
+              </code></pre>
           </section>
           <section>
             <h4 class="primary-color">Higher-order functions</h4>
@@ -267,9 +276,11 @@
                 console.log(text)
                 callbackFunc()
               }
+
               function myCallbackFunc() {
                 console.log('Callbackfunction')
               }
+              
               myFunction('text', myCallbackFunc)
             </code></pre>
           </section>
@@ -321,7 +332,7 @@
           </section>
         </section>
         <section style="height: 80%; display: flex; flex-direction: column; justify-content: space-between">
-          <img width="400px" src="assets/thanks.gif" alt="thanks">
+          <img width="400px" src="assets/thanks.gif" alt="thanks" />
           <div class="icons">
             <img src="assets/icons/twitter.svg" alt="twitter-icon" /><span class="username">oozkercin</span>
             <img src="assets/icons/github.svg" alt="github-icon" /><span class="username">orhanozkercin</span>
