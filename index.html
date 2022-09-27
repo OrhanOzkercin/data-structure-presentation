@@ -2,14 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Junior Konf - Orhan Özkerçin</title>
+    <title>Teknasyon Tech Talk - Orhan Özkerçin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../dist/reveal.css" />
-    <link rel="stylesheet" href="../dist/theme/black.css" id="theme" />
-    <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../dist/theme/white.css" id="theme" />
     <link rel="stylesheet" href="/plugin/highlight/monokai.css" />
     <script src="/plugin/highlight/highlight.js"></script>
-
     <style>
+      :root {
+        --primary-color: #3e69ed;
+        --secondary-color: #0f3460;
+      }
+      .reveal h1 {
+        font-size: 32px;
+      }
+
       p {
         font-size: 1.2rem;
         letter-spacing: 0.12rem;
@@ -21,39 +38,20 @@
         font-weight: 400;
         text-align: start;
       }
+      section {
+        height: 100%;
+      }
       ::selection {
-        background: #ff9292 !important; /* WebKit/Blink Browsers */
+        background: var(--secondary-color) !important; /* WebKit/Blink Browsers */
       }
       ::-moz-selection {
-        background: #ff9292 !important; /* Gecko Browsers */
-      }
-
-      .primary-color {
-        color: #fbd148 !important;
-      }
-      .secondary-color {
-        color: #ff9292 !important;
-      }
-      .bg-primary {
-        background-color: #fbd148 !important;
-        color: black;
-      }
-      .px-1 {
-        padding-left: 0.3rem;
-        padding-right: 0.3rem;
-      }
-      .mt-3 {
-        margin-top: 3rem !important;
-      }
-      .mt-6 {
-        margin-top: 6rem !important;
-      }
-      .bold {
-        font-weight: 600;
+        background: var(--secondary-color) !important; /* Gecko Browsers */
       }
       .header {
-        margin-top: -3rem;
         margin-bottom: 2.5rem;
+      }
+      .reveal .header > * {
+        color: var(--primary-color);
       }
       .pp {
         width: 180px;
@@ -67,6 +65,10 @@
       .my-name p {
         text-align: center !important;
       }
+      .my-name p span {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
       code {
         font-size: 1.4rem;
       }
@@ -76,7 +78,7 @@
         justify-content: center;
       }
       .username {
-        color: #fdedc1;
+        color: var(--secondary-color);
         font-size: 1rem;
         font-weight: 600;
         margin: 0 2rem 0 0.5rem;
@@ -84,252 +86,352 @@
       .username:last-child {
         margin-right: 0;
       }
+      .ds-list li {
+        font-size: 12px !important;
+      }
+      table.ds-list {
+        background: #f4f4f4;
+      }
+      .ds-list td {
+        font-size: 14px;
+        border: 0.5px solid #a7a7a7;
+        font-weight: 600;
+      }
+      .ds-list tr:nth-child(2n) {
+        background-color: #e7e7e7;
+      }
+      table.array-table td {
+        font-size: 14px;
+        border: none;
+      }
     </style>
   </head>
   <body>
+    <img src="./assets/istanbul.jpg" width="64px" style="position: absolute; bottom:0; left:10px;">
     <div class="reveal">
       <div class="slides">
-        <section>
-          <div class="header">
-            <h6 class="primary-color">React'ten Önce JavaScript!</h6>
-            <h4 class="primary-color">Higher Order Array Methods</h4>
+        <section data-auto-animate>
+          <div class="header my-5 text-xxl-center">
+            <h1>Data structures nedir, neden bu kadar çoklar?</h1>
           </div>
-          <img class="pp" src="assets/me.jpg" alt="Orhan Özkerçin" />
-          <div class="my-name">
+          <img class="pp mt-5" src="assets/me.jpg" alt="Orhan Özkerçin" />
+          <div class="my-name mt-5">
             <h5>Orhan Özkerçİn</h5>
-            <p>Frontend Developer <span style="color: #fbd148">@Huawei</span></p>
+            <p>Frontend Developer <span>@Teknasyon</span></p>
           </div>
-          <div class="icons">
+          <div class="icons position-absolute bottom-0 start-50 translate-middle-x">
             <img src="assets/icons/twitter.svg" alt="twitter-icon" /><span class="username">oozkercin</span>
             <img src="assets/icons/github.svg" alt="github-icon" /><span class="username">orhanozkercin</span>
             <img src="assets/icons/linkedin.svg" alt="linkedin-icon" /> <span class="username">orhanozkercin</span>
             <img src="assets/icons/medium-line.svg" alt="medium-icon" /> <span class="username">orhanozkercin</span>
           </div>
         </section>
-
         <section>
-          <h4 class="primary-color">Teşekkürler</h4>
-          <img width="500px" src="assets/ng_turkey_logo.png" alt="ngTurkey" />
-        </section>
-
-        <section>
-          <h4 class="primary-color">Sunum Hakkında</h4>
+          <h1 class="primary-color">Sunum Hakkında</h1>
           <div class="row">
+            <div class="fragment fade-out position-absolute">
+              <img src="https://media.giphy.com/media/Sqs0iKJIc2poJMi3D5/giphy-downsized-large.gif" alt="wwh" />
+            </div>
             <div class="fragment col-6">
               <h6 class="secondary-color">Neler Olacak?</h6>
-              <p class="fragment">😋 Array methodları üzerinden genel bakış açım.</p>
-              <p class="fragment">🤗 JavaScript'te array nedir?</p>
-              <p class="fragment">🤯 JavaScript'te higher order method nedir?</p>
-              <p class="fragment">👷‍♂️ Builtin array methodları ile ilgili demo.</p>
-              <p class="fragment">😱 Array methodlarını implementasyonu.</p>
+              <p class="fragment">🦁 Bol bol tatlı hayvan fotoğrafı.</p>
+              <p class="fragment">🏗 Data structures tanımı ve örnekleri</p>
+              <p class="fragment">👷 Data structures kullanım alanları</p>
+              <p class="fragment">🔌 Demo gösterimi.</p>
             </div>
             <div class="fragment col-6">
-              <h6 class="secondary-color">Amacım ne?</h6>
-              <p class="fragment">😉 Aslında ortada bir 'magic' olmadığını göstermek.</p>
-              <p class="fragment">😶 Anlamakta güçlük çektiğim şeyleri nasıl anladığımı göstermek.</p>
-              <p class="fragment">🥱 Higher order methodlardan bahsetmek.</p>
-              <p class="fragment">😲 Bu methodları bizim de aslında implemente edebileceğimizi göstermek.</p>
+              <h6 class="secondary-color">Amaçlanan ne?</h6>
+              <p class="fragment">🤑 Data Structureları bilmek neden önemli</p>
+              <p class="fragment">😶 Neden bu kadar çok data structure var</p>
+              <p class="fragment">🕵️‍♀️ Data structureları nerelerde kullanıyoruz</p>
+              <p class="fragment">🤠 Arrayler neyimize yetmiyor :)</p>
+            </div>
+            <div class="fragment">
+              <img src="https://media.giphy.com/media/dudcZA9e14HIY/giphy.gif" alt="" />
             </div>
           </div>
         </section>
-
-        <section>
-          <h4 class="primary-color">React'ten önce ?</h4>
-          <div class="r-stack">
-            <img class="fragment" src="assets/before-react/1.png" alt="1" />
-            <img class="fragment" src="assets/before-react/4.png" alt="4" />
-            <img class="fragment" src="assets/before-react/3.png" alt="3" />
-            <img class="fragment" src="assets/before-react/2.png" alt="2" />
-          </div>
-        </section>
-
-        <section>
-          <section>
-            <h4 class="primary-color">Arrays</h4>
-            <p>The Array() constructor is used to create <span class="bg-primary px-1">Array objects.</span></p>
-            <p>
-              The JavaScript Array class is a global object that is used in the construction of arrays; which are
-              high-level, list-like objects.
-            </p>
-          </section>
+        <section data-transition="zoom" data-background="./assets/sinc.jpg" data-background-opacity="1" class="w-100">
           <section data-transition="zoom">
-            <h4 class="primary-color">Objects</h4>
-            <p>
-              The Object class represents one of JavaScript's data types. It is used to store various keyed collections
-              and more complex entities.
-            </p>
-            <pre><code data-line-numbers="2,3,10|4-6|7-9">
-              const computer = 
-              {
-                ramSize: '16gb',
-                hddSize: '1TB',
-                processor: 'Intel Core i7',
-                runComputer: function() {
-                  console.log('Computer is running...');
-                }
-              };
-              </code></pre>
+            <div class="position-absolute top-0 w-100">
+              <h2 class="text-white">Data Structure nedir?</h2>
+              <p class="fragment text-sm text-light">
+                In computer science, a data structure is a data organization, management, and storage format that is
+                usually chosen for efficient access to data. More precisely, a data structure is a collection of data
+                values, the relationships among them, and the functions or operations that can be applied to the data.
+              </p>
+            </div>
           </section>
-          <section data-transition="concave">
-            <pre><code data-line-numbers="2-12|13">
-              const computer = 
-              {
-                ramSize: '16gb',
-                hddSize: '1TB',
-                processor: 'Intel Core i7',
-                runComputer: function() {
-                  console.log('Computer is running...');
-                }
-              };
-              console.log(computer.ramSize) // 16gb
-              console.log(computer["hddSize"]) // 1TB
-              computer.runComputer() // Computer is running...
-              
-              </code></pre>
+          <section data-transition="zoom" data-background="./assets/dog.jpg" data-background-opacity="1" class="w-100">
+            <h1>Data Structure neler?</h1>
+            <div class="fragment">
+              <table class="table ds-list">
+                <tbody>
+                  <tr>
+                    <td>Array</td>
+                    <td>Bit array</td>
+                    <td>Bit field</td>
+                    <td>Bitboard</td>
+                    <td>Bitmap</td>
+                    <td>Circular buffer</td>
+                    <td>Control table</td>
+                    <td>Image</td>
+                    <td>Dope vector</td>
+                    <td>Dynamic array</td>
+                    <td>Gap buffer</td>
+                  </tr>
+                  <tr>
+                    <td>Hashed array tree</td>
+                    <td>Lookup table</td>
+                    <td>Matrix</td>
+                    <td>Parallel array</td>
+                    <td>Sorted array</td>
+                    <td>Sparse matrix</td>
+                    <td>Iliffe vector</td>
+                    <td>Doubly linked list</td>
+                    <td>Array list</td>
+                    <td>Treap</td>
+                    <td>WAVL tree</td>
+                  </tr>
+                  <tr>
+                    <td>Linked list</td>
+                    <td>Association list</td>
+                    <td>Self-organizing list</td>
+                    <td>Skip list</td>
+                    <td>Unrolled linked list</td>
+                    <td>VList</td>
+                    <td>Conc-tree list</td>
+                    <td>Zipper</td>
+                    <td>Half-edge</td>
+                    <td>Variable-length array</td>
+                    <td>Top tree</td>
+                  </tr>
+                  <tr>
+                    <td>Difference list</td>
+                    <td>Free list</td>
+                    <td>AA tree</td>
+                    <td>AVL tree</td>
+                    <td>Binary search tree</td>
+                    <td>Binary tree</td>
+                    <td>Cartesian tree</td>
+                    <td>Left-child right-sibling binary tree</td>
+                    <td>Order statistic tree</td>
+                    <td>T-tree</td>
+                    <td>Tango tree</td>
+                  </tr>
+                  <tr>
+                    <td>Pagoda</td>
+                    <td>Randomized binary search tree</td>
+                    <td>Red–black tree</td>
+                    <td>Rope</td>
+                    <td>Scapegoat tree</td>
+                    <td>Self-balancing binary search tree</td>
+                    <td>Splay tree</td>
+                    <td>Xor linked list</td>
+                    <td>Conc-tree list</td>
+                    <td>Weight-balanced tree</td>
+                    <td>Threaded binary tree</td>
+                  </tr>
+                  <tr>
+                    <td>B-tree</td>
+                    <td>B+ tree</td>
+                    <td>B*-tree</td>
+                    <td>Dancing tree</td>
+                    <td>2–3 tree</td>
+                    <td>2–3–4 tree</td>
+                    <td>Queap</td>
+                    <td>Fusion tree</td>
+                    <td>Bx-tree</td>
+                    <td>Heap</td>
+                    <td>Binary heap</td>
+                  </tr>
+                  <tr>
+                    <td>B-heap</td>
+                    <td>Weak heap</td>
+                    <td>Binomial heap</td>
+                    <td>Fibonacci heap</td>
+                    <td>AF-heap</td>
+                    <td>Radix tree</td>
+                    <td>Suffix tree</td>
+                    <td>Suffix array</td>
+                    <td>Compressed suffix array</td>
+                    <td>FM-index</td>
+                    <td>Generalised suffix tree</td>
+                  </tr>
+                  <tr>
+                    <td>Leonardo heap</td>
+                    <td>2–3 heap</td>
+                    <td>Soft heap</td>
+                    <td>Pairing heap</td>
+                    <td>Leftist heap</td>
+                    <td>Treap</td>
+                    <td>Beap</td>
+                    <td>Skew heap</td>
+                    <td>Ternary heap</td>
+                    <td>D-ary heap</td>
+                    <td>Brodal queue</td>
+                  </tr>
+                  <tr>
+                    <td>B-tree</td>
+                    <td>Judy array</td>
+                    <td>Trie</td>
+                    <td>X-fast trie</td>
+                    <td>Y-fast trie</td>
+                    <td>Merkle tree</td>
+                    <td>Ternary tree</td>
+                    <td>K-ary tree</td>
+                    <td>And–or tree</td>
+                    <td>(a,b)-tree</td>
+                    <td>Link/cut tree</td>
+                  </tr>
+                  <tr>
+                    <td>Disjoint-set data structure (Union-find data structure)</td>
+                    <td>Fusion tree</td>
+                    <td>Enfilade</td>
+                    <td>Exponential tree</td>
+                    <td>Fenwick tree</td>
+                    <td>Van Emde Boas tree</td>
+                    <td>Rose tree</td>
+                    <td>SPQR-tree</td>
+                    <td>Spaghetti stack</td>
+                    <td>Segment tree</td>
+                    <td>Interval tree</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
-          <section data-transition="convex">
-            <h4 class="primary-color">Strings ?</h4>
+          <section
+            data-transition="zoom"
+            data-background="./assets/blue-dog.jpg"
+            data-background-opacity="1"
+            class="w-100"
+          >
+            <h1 style="color: #e7e7e7; font-size: 4rem">Arrayler neyimize yetmiyor?</h1>
+            <div class="fragment">
+              <pre>
+                <code data-trim data-noescape>
+                  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-            <pre><code >
-
-              let cat = 'Cheshire';
-              console.log(cat.length); // 8
-              console.log(cat[0]); // "C"
-              console.log(cat.toLowerCase()); // "cheshire"
-              
-              </code></pre>
+                  arr.push(11);
+                  arr.pop();
+                  arr.unshift(0);
+                  arr.shift();
+                  arr.find(cb);
+                  ...
+                </code>
+              </pre>
+            </div>
+            <img class="fragment" src="./assets/gifs/list.gif" alt="list" />
           </section>
-          <section>
-            <img src="/assets/string-obj.png" alt="str" />
-            <img src="/assets/string-prim-obj.png" alt="str" />
+          <section data-background-color="#444">
+            <h1 style="font-size: 4rem">Arrayler neyimize yetmiyor?</h1>
+            <table class="fragment table array-table">
+              <thead>
+                <th style="padding-left: 0">
+                  <h4 style="margin: 0">
+                    Static Array <span style="color: #aaa; font-size: 12px; margin: 0">C, C++, JAVA, GO</span>
+                  </h4>
+                </th>
+                <th style="padding-left: 0">
+                  <h4 style="margin: 0">
+                    Dynamic Array
+                    <span style="color: #aaa; font-size: 12px; margin: 0">Python, Javascript*</span>
+                  </h4>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code> int[] arr = new int[10]; </code>
+                  </td>
+                  <td>
+                    <code> const arr = [] </code>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col">
+                    <br /><code>int* newArray = new int[size];</code><br />
+                    <code>int* temp = oldArray; </code><br />
+                    <code>oldArray = newArray; </code><br />
+                    <code>delete[] temp;</code>
+                  </td>
+                  <td class="col">
+                    <br /><code> arr.push(1) </code> <code>arr.push(2)</code><br />
+                    <code>arr.push(3)</code><br />
+                    <code>...</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="fragment" style="background-color: white">
+              <img src="https://static.javatpoint.com/core/images/dynamic-array-in-java2.png" alt="" />
+            </div>
           </section>
-        </section>
+          <section data-background-color="#444">
+            <h1>Arrayler neyimize yetmiyor?</h1>
+            <div class="r-stack">
+              <pre class="fragment"><code data-trim>
+             const data = [
+               { id:1, name: "John", age: 20 },
+               { id:2, name: "Jane", age: 21 },
+               { id:3, name: "Jack", age: 22 },
+               { id:4, name: "Jill", age: 23 },
+               { id:5, name: "Joe", age: 24 },
+             ];
+             // id'si 3 olan kişinin yaşını 25 yapmak istiyoruz
 
-        <section>
-          <section>
-            <h4 class="primary-color">Functions</h4>
-            <pre><code>
-      const myFunction = function addTwoNumber(number1, number2) 
-      {
-        return number1 + number2
-      }
-      
-      myFunction(2,5) // 7
+             // Çözüm:
+             // id'si 3 olan kişiyi bul. (Bulana kadar dön ♻️)
+             // Yaşını 25 yap          
             </code></pre>
+              <pre class="fragment">
+                <code data-trim>
+                  // Hashmap, Hashtable, Dictionary, Map vb. key,value yapısı
+                  const obj = {
+                    1: {name: "John", age: 20 },
+                    2: {name: "Jane", age: 21 },
+                    3: {name: "Jack", age: 22 },
+                    4: {name: "Jill", age: 23 },
+                    5: {name: "Joe", age: 24 },
+                  }
+                  // id'si 3 olan kişinin yaşını 25 yapmak istiyoruz
+                  // id'si 3 olan kişiyi bul
+                  // Yaşını 25 yap               
+
+                  // Tada 🎉 
+                  obj[3].age = 25;
+                  
+                </code>
+              </pre>
+              <img class="fragment" src="./assets/arr_BigO.jpg" alt="bigO" />
+            </div>
           </section>
-          <section>
-            <h4 class="primary-color">JavaScript'te functions nedir?</h4>
-            <h2 class="fragment">Objectdir!</h2>
-            <h2 class="fragment">First Class Objectdir!</h2>
-          </section>
-          <section>
-            <h4 class="primary-color">First Class Object nedir?</h4>
-            <p>
-              <span style="color: darkgrey">Wikipedia:</span> In programming language design, a first-class citizen
-              (also type, object, entity, or value) in a given programming language is an entity which supports all the
-              operations generally available to other entities.
-              <span class="bg-primary px-1"
-                >These operations typically include being passed as an argument, returned from a function, modified, and
-                assigned to a variable.</span
-              >
-            </p>
+          <section data-background="./assets/t-dog.jpg">
+            <h1 style="color: white">Developer ne ister</h1>
 
-            <pre>
-              <code>
-      function speak(string) {
-        console.log(string);
-      }
+            <div class="r-stack">
+              <div class="fragment">
+                <img src="https://media.giphy.com/media/ZOSkhydV7C0SZKcw6h/giphy.gif" alt="" />
+              </div>
 
-
-      speak("Hello");                     
-
-
-      var talk = speak;
-      talk("Hi");                         
-
-
-      function functionReturner(fn) {
-        return fn;
-      }
-
-
-      var chat = functionReturner(talk);
-      chat("Good Morning");               
-
-
-      var myFuncs = [talk];
-      myFuncs[0]("Good Afternoon");       
-
-      
-      talk.myProperty = "bananas";
-      console.log(talk.myProperty);       
-              </code></pre>
-          </section>
-          <section>
-            <h4 class="primary-color">Higher-order functions</h4>
-            <p>
-              <span style="color: darkgrey">Eloquent Javascript:</span> Functions that operate on other functions,
-              either by taking them as arguments or by returning them, are called higher-order functions.
-            </p>
-            <pre><code>
-              function myFunction(text, callbackFunc) {
-                console.log(text)
-                callbackFunc()
-              }
-
-              function myCallbackFunc() {
-                console.log('Callbackfunction')
-              }
-              
-              myFunction('text', myCallbackFunc)
-            </code></pre>
+              <div class="fragment">
+                <img src="./assets/ds-O.jpg" alt="" />
+              </div>
+            </div>
           </section>
         </section>
         <section>
-          <h4 class="primary-color">Higher-order Array Methods</h4>
-          <ul>
-            <li>forEach()</li>
-            <li>filter()</li>
-            <li>map()</li>
-            <li>sort()</li>
-            <li>reduce()</li>
-            <li>find()</li>
-            <li>some()</li>
-            <li>every()</li>
-            <strong>...</strong>
-          </ul>
+          <iframe src="https://visualgo.net/en/list" width="1500" height="800" frameborder="0"></iframe>
         </section>
-        <!-- <section>
-          <h4 class="primary-color">Examples</h4>
+        <section data-background="./assets/birds.jpg" data-background-opacity=".5">
           <iframe
-            src="https://codesandbox.io/embed/examples-f1wfy?fontsize=14&hidenavigation=1&theme=dark"
-            style="width: 100%; height: 600px; border: 0; border-radius: 4px; overflow: hidden"
-            title="Examples"
+            src="https://codesandbox.io/embed/crimson-glitter-xiw56x?fontsize=14&hidenavigation=1&theme=dark"
+            style="width: 100%; height: 800px; border: 0; border-radius: 4px; overflow: hidden"
+            title="crimson-glitter-xiw56x"
             allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
           ></iframe>
-        </section>-->
-        <section>
-          <section>
-            <h4 class="primary-color">Array.prototype.forEach()</h4>
-            <iframe
-              src="https://codesandbox.io/embed/arr-foreach-u3ghs?fontsize=14&hidenavigation=1&theme=dark"
-              style="width: 100%; height: 600px; border: 0; border-radius: 4px; overflow: hidden"
-              title="arr_ForEach"
-              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-            ></iframe>
-          </section>
-          <section>
-            <h4 class="primary-color">Array.prototype.map()</h4>
-            <iframe
-              src="https://codesandbox.io/embed/arr-map-xtr01?fontsize=14&hidenavigation=1&theme=dark"
-              style="width: 100%; height: 600px; border: 0; border-radius: 4px; overflow: hidden"
-              title="arr_Map"
-              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-            ></iframe>
-          </section>
         </section>
         <section style="height: 80%; display: flex; flex-direction: column; justify-content: space-between">
           <img width="400px" src="assets/thanks.gif" alt="thanks" />
@@ -346,72 +448,17 @@
     <script src="../dist/reveal.js"></script>
 
     <script type="module">
-      import Reveal from '/dist/reveal.esm.js';
-      import Markdown from '/plugin/markdown/markdown.esm.js';
+      import Reveal from "/dist/reveal.esm.js";
+      import Markdown from "/plugin/markdown/markdown.esm.js";
       Reveal.initialize({
         plugins: [Markdown, RevealHighlight],
+        center: false,
       });
-    </script>
-    <script>
-      const computer = {
-        ramSize: '16gb',
-        hddSize: '1TB',
-        processor: 'Intel Core i7',
-        runComputer: function () {
-          console.log('Computer is running...');
-        },
-      };
-      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-      const getName = function (name = 'Orhan') {
-        console.log(name);
-      };
-      const cat = 'Cheshire';
-      console.log('%cAvailable data structures', 'color: red');
-      console.log('\t%cArray: ', 'color: pink', 'numbers');
-      console.log('\t%cObject: ', 'color: pink', 'computer');
-      console.log('\t%cFunction: ', 'color: pink', 'getName');
-      console.log('\t%cString: ', 'color: pink', 'cat');
-      console.log('%c------------------------------------', 'color: red');
-
-      //Functions Example
-      function speak(string) {
-        console.log(string);
-      }
-
-      var talk = speak;
-
-      function functionReturner(fn) {
-        return fn;
-      }
-
-      var chat = functionReturner(talk);
-      var myFuncs = [talk];
-      talk.myProperty = 'bananas';
-
-      function myFunction(text, callbackFunc) {
-        console.log(text);
-        callbackFunc();
-      }
-      function myCallbackFunc() {
-        console.log('Callbackfunction');
-      }
-
-      //Override console.clear
-      var log = console.clear;
-
-      const message = 'Hi!';
-
-      console.clear = function (e) {
-        log.apply();
-        console.log('%cAvailable data structures', 'color: red');
-        console.log('\t%cArray: ', 'color: pink', 'numbers');
-        console.log('\t%cObject: ', 'color: pink', 'computer');
-        console.log('\t%cFunction: ', 'color: pink', 'getName');
-        console.log('\t%cString: ', 'color: pink', 'cat');
-        console.log('%c------------------------------------', 'color: red');
-      };
-
-      console.clear();
+      Reveal.on("fragmentshown", (event) => {
+        console.log("event: ", event);
+        const istanbulSection = document.querySelector("#istanbul-section");
+        istanbulSection.attributes["data-background"].value = "0.3";
+      });
     </script>
   </body>
 </html>
